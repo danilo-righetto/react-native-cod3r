@@ -87,6 +87,37 @@ Depois disso clique no sinal de "+" e escolha o dispositivo "**Pixel 4**" com o 
 
 ![Devices - Virtual Device Manager - Android Studio](./images/devices-virtual-device-manager-android-studio.png.png)
 
+#### Passo 5 - Evitando Problemas
+
+Queremos evitar o famoso [troubleshooting](https://reactnative.dev/docs/troubleshooting) ao iniciarmos o nosso projeto feito com **React Native**, e para isso precisamos executar o seguinte comando:
+
+```sh
+echo fs.inotify.max_user_watches=582222 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+```
+
+Após isso precisamos instalar o **React Native** de forma global no nosso sistema, com o comando:
+
+```sh
+npm install react-native -g
+```
+
+Crie um novo projeto:
+
+```sh
+npx react-native init primeiroProjeto
+```
+
+E em seguida inicie o projeto:
+
+```sh
+npx react-native start
+```
+
+E em um outro terminal execute o comando:
+
+```sh
+npx react-native run-android
+```
 
 ## Fonte
 
